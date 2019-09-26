@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+compileJava {
+    sourceCompatibility = 1.10
+    targetCompatibility = 1.10
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile             'io.functionalj:functionalj-all:0.4.0.0'
+    annotationProcessor 'io.functionalj:functionalj-types:0.4.0.0'
+    annotationProcessor 'io.functionalj:functionalj-elm:0.4.0.0'
+    
+    // == Test ==
+    
+    testCompile 'junit:junit:4.12'
+    testCompile 'io.functionalj:functionalj-all:0.4.0.0'
+}
